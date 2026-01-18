@@ -6,7 +6,7 @@ import Invoice from '../models/Invoice.js';
    try{
     const {inv,name, due_date,amount, paid,amount_due,descriptions,status} = req.body;
 //      // if the Supplier already exist
-     const existingInvoice = await Invoice.findOne({name});
+    const existingInvoice = await Invoice.findOne({ inv });
     if (existingInvoice){
        return res.status(400).json({ success: false, message:'Invoice already exists'}); 
      }
@@ -76,7 +76,7 @@ const deleteInvoice = async (req, res) => {
     return res.status(404).json({ success: false, message: "Invoice not found"});
    }
     await Invoice.findByIdAndDelete(id);
-   return res.status(200),json({success: true, message: "Invoice Deleted successfully" });
+   return res.status(200).json({success: true, message: "Invoice Deleted successfully" });
   } catch(error){
     console.error("Error deleting Invoice: ",error);
   return res.status(500).json({success: false, message: "server error"});

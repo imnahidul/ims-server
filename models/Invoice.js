@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const invoiceSchema = new mongoose.Schema ({
-  inv: {type: String, required: true},
+  inv: {type: String, required: true, unique: true},
   name:{type: String, required: true},
   due_date:{type: String, required: true},
   amount:{type: String, required: true},
