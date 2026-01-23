@@ -20,7 +20,7 @@ const app = express();
 /////////app.use(cors({ origin: "https://vision-project-3ntg.vercel.app", credentials: true }));
 //app.use(cors());
  app.use(cors({
-  origin: "http://localhost:5173", // your frontend origin
+  origin: ["http://localhost:5173", "http://90.90.91.34:3000"], // your frontend origin
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"], // important!
