@@ -15,6 +15,7 @@ import dashboardRoutes from './routes/dashboard.js';
 import invoiceRoutes from './routes/invoice.js';
 import estimateRoutes from "./routes/estimate.js";
 import requisitionRoutes from "./routes/requisition.js";
+import faultyRoutes from "./routes/faulty.js"
 
 const app = express();
 /////////app.use(cors({ origin: "https://vision-project-3ntg.vercel.app", credentials: true }));
@@ -39,6 +40,7 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/invoice', invoiceRoutes);
 app.use("/api/estimate", estimateRoutes);
 app.use("/api/requisition", requisitionRoutes);
+app.use("/api/faulty", faultyRoutes);
 
 // Fixed port + DB connection
 const PORT = process.env.PORT || 5000;
